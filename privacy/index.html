@@ -127,9 +127,9 @@
     <h1>Privacy Policy</h1>
 
     <div class="meta">
-      <p><strong>Version:</strong> 1.1</p>
-      <p><strong>Last updated:</strong> 21 September 2026</p>
-      <p><strong>Effective date:</strong> 21 September 2026</p>
+      <p><strong>Version:</strong> 1.2</p>
+      <p><strong>Last updated:</strong> 6 November 2026</p>
+      <p><strong>Effective date:</strong> 6 November 2026</p>
     </div>
 
     <p>This Privacy Policy explains how the Lyhio app (“Lyhio”, “App”, “we”, “us”) handles information when you create, send, receive, and reveal Scratches and Mosaics, use Lyhio Plus, contact support, or use related app features.</p>
@@ -192,7 +192,7 @@
       <li>format version and creation / expiry timestamps.</li>
     </ul>
 
-    <p>The Apple Messages payload itself contains lightweight technical information (including the message UUID) used to identify and retrieve the Scratch. Lyhio does not operate a separate developer-owned server for this transport.</p>
+    <p>The Apple Messages payload itself contains lightweight technical information (including the message UUID) used to identify and retrieve the Scratch. For Scratches sent through Apple Messages with iCloud, Lyhio does not use a developer-operated server for this transport. Web links and delivery without iCloud are described below.</p>
 
     <p>Scratch content is stored in an <strong>Apple CloudKit public database</strong> used by Lyhio for delivery — not in a private or shared CloudKit database. The app retrieves a record by its message UUID rather than presenting a browsable gallery of other users' Scratches. Practical confidentiality therefore depends on the UUID remaining unguessable and on Apple CloudKit platform controls; it is not the same as private per-user CloudKit storage.</p>
 
@@ -207,6 +207,14 @@
     <p>The <strong>14-day period applies to the temporary CloudKit delivery copy</strong>. It does <strong>not</strong> impose a 14-day expiration on a Scratch that has already been successfully obtained by the recipient's device.</p>
 
     <p>Apple's processing of iMessage, iCloud, and CloudKit is also governed by Apple's applicable terms and privacy policies.</p>
+
+    <h3>Web links and delivery without iCloud</h3>
+
+    <p>When you share a Scratch as a link (for example to Telegram, WhatsApp, Mail, or Messages), or when your device cannot use iCloud for delivery, Lyhio uploads the selected Scratch image, its style identifier, and the optional note to a Lyhio-operated web service hosted on <strong>Cloudflare</strong> (Cloudflare Workers and Workers KV).</p>
+
+    <p>The Scratch is then available at a link that contains a random identifier (UUID). Anyone who has the link can open the Scratch in the Lyhio app or in a web browser, so share the link only with the people you intend to receive it.</p>
+
+    <p>This web copy is deleted automatically approximately <strong>7 days</strong> after upload. Anyone who opens the link can report the content; a reported Scratch is removed from the web service immediately. The web page does not use cookies, analytics, or advertising. Cloudflare may process technical data such as IP addresses as part of delivering the service.</p>
 
     <h2>4. Receiving and revealing Scratches</h2>
 
@@ -368,6 +376,7 @@
 
     <ul>
       <li><strong>Apple</strong> — App Store, StoreKit, iOS, Messages, iCloud, CloudKit, and related Apple system services;</li>
+      <li><strong>Cloudflare</strong> — hosting of Scratch web links and delivery without iCloud (Cloudflare Workers, Workers KV);</li>
       <li><strong>Google (Gmail)</strong> — if you contact Lyhio Support using the current support email service;</li>
       <li>other apps or providers you intentionally choose through Apple system sharing interfaces.</li>
     </ul>
